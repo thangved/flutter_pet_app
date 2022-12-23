@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pet_app/config/themes/padding_styles.dart';
+import 'package:pet_app/modules/login/screens/login_screen.dart';
 import 'package:pet_app/widgets/button.dart';
 
 class SplashBottom extends StatelessWidget {
@@ -16,6 +17,10 @@ class SplashBottom extends StatelessWidget {
       margin: EdgeInsets.all(PaddingStyles.defaultPadding),
       child: PetAppButton(
         width: size.width,
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => LoginScreen()));
+        },
       ),
     );
   }

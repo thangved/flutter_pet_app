@@ -3,14 +3,18 @@ import 'package:pet_app/config/themes/color_styles.dart';
 import 'package:pet_app/config/themes/text_styles.dart';
 
 class PetAppButton extends StatelessWidget {
-  const PetAppButton({Key? key, required this.width}) : super(key: key);
+  const PetAppButton({Key? key, required this.width, required this.onTap})
+      : super(key: key);
 
   final double width;
+  final dynamic onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        onTap();
+      },
       child: Container(
         width: width,
         alignment: Alignment.center,
