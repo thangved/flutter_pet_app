@@ -24,22 +24,27 @@ class _SplashHeroState extends State<SplashHero> {
   Widget build(BuildContext context) {
     const List<SplashCard> splashItems = [
       SplashCard(
-          description:
-              'Get interesting promos here, register your account immediately so you can meet your animal needs.',
-          heroImage: 'assets/images/splash_screen_1.svg'),
+        description:
+            'Get interesting promos here, register your account immediately so you can meet your animal needs.',
+        heroImage: 'assets/images/splash_screen_1.svg',
+      ),
       SplashCard(
-          description:
-              'Get interesting promos here, register your account immediately so you can meet your animal needs.',
-          heroImage: 'assets/images/splash_screen_2.svg'),
+        description:
+            'Get interesting promos here, register your account immediately so you can meet your animal needs.',
+        heroImage: 'assets/images/splash_screen_2.svg',
+      ),
       SplashCard(
-          description:
-              'Get interesting promos here, register your account immediately so you can meet your animal needs.',
-          heroImage: 'assets/images/splash_screen_3.svg'),
+        description:
+            'Get interesting promos here, register your account immediately so you can meet your animal needs.',
+        heroImage: 'assets/images/splash_screen_3.svg',
+      ),
     ];
 
     return Container(
       width: widget.size.width,
-      padding: EdgeInsets.symmetric(horizontal: PaddingStyles.defaultPadding),
+      padding: const EdgeInsets.symmetric(
+        horizontal: PaddingStyles.defaultPadding,
+      ),
       child: Column(
         children: [
           SvgPicture.asset(
@@ -53,29 +58,35 @@ class _SplashHeroState extends State<SplashHero> {
             textAlign: TextAlign.justify,
           ),
           Container(
-            margin:
-                EdgeInsets.symmetric(vertical: PaddingStyles.defaultPadding),
+            margin: const EdgeInsets.symmetric(
+                vertical: PaddingStyles.defaultPadding),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: splashItems.asMap().entries.map((entry) {
-                int index = entry.key;
-                return GestureDetector(
+              children: splashItems.asMap().entries.map(
+                (entry) {
+                  int index = entry.key;
+                  return GestureDetector(
                     onTap: () {
-                      setState(() {
-                        currentIndex = index;
-                      });
+                      setState(
+                        () {
+                          currentIndex = index;
+                        },
+                      );
                     },
                     child: Container(
                       width: 8,
                       height: 8,
-                      margin: EdgeInsets.symmetric(horizontal: 8),
+                      margin: const EdgeInsets.symmetric(horizontal: 8),
                       decoration: BoxDecoration(
-                          color: index == currentIndex
-                              ? ColorStyles.main100
-                              : ColorStyles.black10,
-                          borderRadius: BorderRadius.circular(100)),
-                    ));
-              }).toList(),
+                        color: index == currentIndex
+                            ? ColorStyles.main100
+                            : ColorStyles.black10,
+                        borderRadius: BorderRadius.circular(100),
+                      ),
+                    ),
+                  );
+                },
+              ).toList(),
             ),
           )
         ],
